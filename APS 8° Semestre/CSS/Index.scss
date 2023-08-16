@@ -1,62 +1,83 @@
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.main-1{
-  padding: 20px;
-}
-.container{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 10px;
-  padding-bottom: 50px;
-  flex-wrap: nowrap;
-  background-color: rgba(127, 255, 212, 0.445);
-  margin-top: 10px;
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .main-1{
+    padding: 20px;
+  }
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    padding-bottom: 50px;
+    flex-wrap: nowrap;
+    background-color: rgba(127, 255, 212, 0.445);
+    margin-top: 10px;
+  }
+
+  .top-container {
+    display: flex;
+    background-color: rgba(241, 241, 241, 0.231372549);
+    height: 500px;
+    text-align: center;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .title-top h1{
+    font-size: 50px;
+  }
+
+  .header {
+    padding: 10px 16px;
+    background: #555;
+    color: #f1f1f1;
+  }
+
+  .content {
+    padding: 16px;
+    background-color: #00000065;
+    margin-top: 10px;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    transition: width 2s ease-in-out;
+  }
+
+  .sticky + .content {
+    padding-top: 102px;
+  }
+
+  .parallax {
+    /* The image used */
+    background-image: url('../Pictures/thomas-richter-B09tL5bSQJk-unsplash.jpg');
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
-.top-container {
-  background-color: #f1f1f13b;
-  padding: 300px;
-  text-align: center;
-  margin-bottom: 10px;
+/* Estilos para telas ainda menores, como smartphones em modo retrato */
+@media screen and (max-width: 480px) {
+  .title-top h1 {
+    font-size: 28px;
+  }
 }
 
-.header {
-  padding: 10px 16px;
-  background: #555;
-  color: #f1f1f1;
-}
 
-.content {
-  padding: 16px;
-  background-color: #00000065;
-  margin-top: 10px;
-}
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  left: 0;
-  transition: width 2s ease-in-out;
-}
 
-.sticky + .content {
-  padding-top: 102px;
-}
-
-.parallax {
-  /* The image used */
-  background-image: url('../Pictures/thomas-richter-B09tL5bSQJk-unsplash.jpg');
-
-  /* Set a specific height */
-  min-height: 500px; 
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
