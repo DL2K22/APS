@@ -1,3 +1,8 @@
+
+/* -------------------------------------------------------------------------- */
+/*                                    card                                    */
+/* -------------------------------------------------------------------------- */
+
 const ul = document.querySelector('ul');
 const input = document.getElementById('item');
 let itemsArray = localStorage.getItem('items') ?
@@ -21,4 +26,21 @@ function del(){
   localStorage.clear();
   ul.innerHTML = '';
   itemsArray = [];
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    SITE                                    */
+/* -------------------------------------------------------------------------- */
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
 }

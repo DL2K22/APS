@@ -2,12 +2,10 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-
-.main-1 {
+.main-1{
   padding: 20px;
 }
-
-.container {
+.container{
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -19,7 +17,7 @@ body {
 }
 
 .top-container {
-  background-color: rgba(241, 241, 241, 0.231372549);
+  background-color: #f1f1f13b;
   padding: 300px;
   text-align: center;
   margin-bottom: 10px;
@@ -33,7 +31,7 @@ body {
 
 .content {
   padding: 16px;
-  background-color: rgba(0, 0, 0, 0.3960784314);
+  background-color: #00000065;
   margin-top: 10px;
 }
 
@@ -51,12 +49,14 @@ body {
 
 .parallax {
   /* The image used */
-  background-image: url("../Pictures/thomas-richter-B09tL5bSQJk-unsplash.jpg");
+  background-image: url('../Pictures/thomas-richter-B09tL5bSQJk-unsplash.jpg');
+
   /* Set a specific height */
-  min-height: 500px;
+  min-height: 500px; 
+
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}/*# sourceMappingURL=Index.css.map */
+}
