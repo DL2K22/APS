@@ -1,3 +1,98 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main-1{
+  padding: 20px;
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  padding-bottom: 50px;
+  flex-wrap: nowrap;
+  background-color: rgba(127, 255, 212, 0.685);
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.top-container {
+  display: flex;
+  background-color: rgba(241, 241, 241, 0.231372549);
+  height: 500px;
+  text-align: center;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+.fundo{
+  background-image: url('../Pictures/kisspng-cloud-computing-international-cloud-atlas-cloud-5af2bd9c3812e1.5207156415258576922297.png');
+  opacity: 50%;
+  animation: cloudsAnimation 30s linear infinite;
+  position: absolute;
+}
+
+@keyframes cloudsAnimation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.title-top h1{
+  font-size: 50px;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+  background-color: #000000a1;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  transition: width 2s ease-in-out;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url('../Pictures/thomas-richter-B09tL5bSQJk-unsplash.jpg');
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 768px) {
   body {
     margin: 0;
