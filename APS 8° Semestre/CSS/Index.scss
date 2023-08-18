@@ -4,14 +4,16 @@ body, html {
   font-family: Arial, Helvetica, sans-serif;
 }
 .main-1{
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .container{
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 10px;
-  padding-bottom: 50px;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  padding-left: inherit;
+  padding-right: inherit;
   flex-wrap: nowrap;
   background-color: rgba(127, 255, 212, 0.685);
   margin-top: 10px;
@@ -28,13 +30,18 @@ body, html {
   align-items: center;
   flex-direction: column;
   color: #ffffff;
+  font-family: 'Righteous', cursive;
+  letter-spacing: 10px;
+  border-radius: 20px;
+  box-shadow: 5px 4px 20px rgba(63, 63, 63, 0.25);
 }
 
 .fundo{
   background-image: url('../Pictures/kisspng-cloud-computing-international-cloud-atlas-cloud-5af2bd9c3812e1.5207156415258576922297.png');
-  opacity: 50%;
+  opacity: 20%;
   animation: cloudsAnimation 30s linear infinite;
   position: absolute;
+  top: 0;
 }
 
 @keyframes cloudsAnimation {
@@ -47,28 +54,44 @@ body, html {
 }
 
 .title-top h1{
-  font-size: 50px;
+  font-size: 100px;
+  text-shadow: 2px 2px 2px #d6e1ef99, 0 0 0 #000, 2px 2px 2px #d6e1ef00;
+}
+
+.title-top p{
+  bottom: 20%;
+  position: relative;
+  font-size: 20px;
+  text-shadow: 2px 2px 2px #d6e1ef99, 0 0 0 #000, 2px 2px 2px #d6e1ef00;
 }
 
 .header {
   padding: 10px 16px;
-  background: #555;
+  background: #000000bb;
   color: #f1f1f1;
+  border-radius: 20px;
+  z-index: 100;
 }
 
 .content {
   padding: 16px;
-  background-color: #000000a1;
   margin-top: 10px;
-  color: #ffffff;
+  color: #000000;
+  box-shadow: 20px 4px 20px rgba(63, 63, 63, 0.25);
+  font-family: 'Space Mono', monospace;
+  color: rgba(201, 215, 230, 0.5);
+  text-shadow: 2px 2px 2px #d6e1ef99, 0 0 0 #000, 2px 2px 2px #d6e1ef00;
+  background-color: #00000088;
+
 }
 
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%;
+  right: 0;
   left: 0;
   transition: width 2s ease-in-out;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .sticky + .content {
@@ -92,6 +115,350 @@ body, html {
   height: 100%;
   overflow: hidden;
 }
+
+.menuitems p {
+  margin: 16px;
+  font-size: 96px;
+  color: #ccc;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 1s ease-in-out;
+  position: relative;
+
+  &::before {
+    content: attr(data-item);
+    transition: all 1s ease-in-out;
+    color: #8254ff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    overflow: hidden;
+  }
+
+  &:hover {
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+nav {
+  .menuItems {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    li {
+      margin: auto;
+
+      a {
+        text-decoration: none;
+        color: #8f8f8f;
+        font-size: 24px;
+        font-weight: 400;
+        transition: all 0.5s ease-in-out;
+        position: relative;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 2px #00000099, 0 0 0 #000, 2px 2px 2px #d6e1ef00;
+
+        &::before {
+          content: attr(data-item);
+          transition: 0.5s;
+          color: #8254ff;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 0;
+          overflow: hidden;
+        }
+
+        &:hover {
+          &::before {
+            width: 100%;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.content h1 {
+	font-size: 5.25vmin;
+	text-align: center;
+	color: white;
+}
+.content p {
+	font-size: max(10pt, 2.5vmin);
+	line-height: 1.4;
+	color: #0e390e;
+	margin-bottom: 1.5rem;
+}
+
+.wrap {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	width: 85vmin;
+	height: 25em;
+	margin: 10px auto;
+	border: 8px solid;
+	border-image: linear-gradient(-50deg, green, #00b300, forestgreen, green, lightgreen, #00e600, green) 1;
+	transition: .3s ease-in-out;
+	position: relative;
+	overflow: hidden;
+}
+.overlay {
+	position: relative;
+	display: flex;
+	width: 100%;
+	padding: 1rem .75rem;
+	background: #186218;
+	transition: .4s ease-in-out;
+	z-index: 1;
+}
+.overlay-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 15vmin;
+	padding: .5rem 0 0 .5rem;
+	border: 3px solid;
+	border-image: 
+    	linear-gradient(
+      	to bottom, 
+      	#AEA724 5%,
+      	forestgreen 35% 65%,
+      	#AEA724 95%
+    	) 0 0 0 100%;
+	transition: .3s ease-in-out .2s;
+	z-index: 1;
+}
+.image-content {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60vmin;
+	height: 100%;
+	background-image: url("https://assets.codepen.io/4787486/trees.png");
+	background-size: cover;
+	transition: .3s ease-in-out;
+	/* border: 1px solid green; */
+}
+
+.inset {
+	max-width: 50%;
+	margin: 0.25em 1em 1em 0;
+	border-radius: 0.25em;
+	float: left;
+}
+
+.dots {
+	position: absolute;
+	bottom: 1rem;
+	right: 2rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 55px;
+	height: 4vmin;
+	transition: .3s ease-in-out .3s;
+}
+.dot {
+	width: 14px;
+	height: 14px;
+	background: yellow;
+	border: 1px solid indigo;
+	border-radius: 50%;
+	transition: .3s ease-in-out .3s;
+}
+
+.text {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50vmin;
+	height: 100%;
+	padding: 3vmin 4vmin;
+	background: #fff;
+	box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / .4);
+	overflow-y: scroll;
+}
+
+.wrap:hover .overlay
+ {
+	transform: translateX(-60vmin);
+}
+.wrap:hover .image-content {
+	width: 30vmin;
+}
+.wrap:hover .overlay-content {
+	border: none;
+	transition-delay: .2s;
+	transform: translateX(60vmin);
+}
+.wrap:hover .dots {
+	transform: translateX(1rem);
+}
+.wrap:hover .dots .dot {
+	background: white;
+}
+
+
+/* Animations and timing delays */
+.animate {
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+  animation-fill-mode: backwards;
+}
+/* Pop In */
+.pop { animation-name: pop; }
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+/* Slide In */
+.slide { animation-name: slide; }
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translate(4em, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+/* Slide Left */
+.slide-left { animation-name: slide-left; }
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translate(-40px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.slide-up {animation-name: slide-up;}
+@keyframes slide-up {
+	0% {
+		opacity: 0;
+		transform: translateY(3em);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.delay-1 {
+  animation-delay: 0.3s;
+}
+.delay-2 {
+  animation-delay: 0.6s;
+}
+.delay-3 {
+  animation-delay: 0.9s;
+}
+.delay-4 {
+  animation-delay: 1.2s;
+}
+.delay-5 {
+  animation-delay: 1.5s;
+}
+.delay-6 {
+  animation-delay: 1.8s;
+}
+.delay-7 {
+  animation-delay: 2.1s;
+}
+.delay-8 {
+  animation-delay: 2.4s;
+}
+
+
+.cards .red {
+  background-color: #f43f5e;
+}
+
+.cards .blue {
+  background-color: #3b82f6;
+}
+
+.cards .green {
+  background-color: #22c55e;
+}
+
+.cards{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  text-align: center;
+  cursor: pointer;
+  transition: 400ms;
+  overflow: auto;
+}
+
+.card{
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  padding-bottom: 0;
+  padding-top: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  transition: 400ms;
+}
+
+.cards .card p.tip {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.cards .card p.second-text {
+  font-size: .7em;
+}
+
+.cards:hover > .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 768px) {
   body {
@@ -129,7 +496,7 @@ body, html {
 
   .header {
     padding: 10px 16px;
-    background: #555;
+    background: #242424;
     color: #f1f1f1;
   }
 
