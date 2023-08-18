@@ -83,6 +83,7 @@ body, html {
   color: rgba(201, 215, 230, 0.5);
   text-shadow: 2px 2px 2px rgba(214, 225, 239, 0.6), 0 0 0 #000, 2px 2px 2px rgba(214, 225, 239, 0);
   background-color: rgba(0, 0, 0, 0.5333333333);
+  overflow-x: auto;
 }
 
 .sticky {
@@ -413,14 +414,11 @@ nav .menuItems li a:hover::before {
 }
 
 .cards {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
+  display: inline-flex;
   text-align: center;
   cursor: pointer;
-  transition: 400ms;
-  overflow: auto;
+  width: 0;
+  transition: all 400ms ease 0s;
 }
 
 .card {
@@ -431,7 +429,6 @@ nav .menuItems li a:hover::before {
   padding-top: 0;
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 20px;
   transition: 400ms;
 }
 

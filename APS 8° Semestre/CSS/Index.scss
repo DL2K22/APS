@@ -82,6 +82,7 @@ body, html {
   color: rgba(201, 215, 230, 0.5);
   text-shadow: 2px 2px 2px #d6e1ef99, 0 0 0 #000, 2px 2px 2px #d6e1ef00;
   background-color: #00000088;
+  overflow-x: auto;
 
 }
 
@@ -410,14 +411,11 @@ nav {
 }
 
 .cards{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
+  display: inline-flex;
   text-align: center;
   cursor: pointer;
-  transition: 400ms;
-  overflow: auto;
+  width: 0;
+  transition: all 400ms ease 0s;
 }
 
 .card{
@@ -428,7 +426,6 @@ nav {
   padding-top: 0;
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 20px;
   transition: 400ms;
 }
 
