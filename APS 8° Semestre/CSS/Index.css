@@ -1,9 +1,24 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&family=Josefin+Slab:wght@100&family=Michroma&family=Overpass+Mono:wght@300&family=Syncopate&family=Thasadith&family=Tsukimi+Rounded:wght@300&display=swap");
 body, html {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(269deg, #e8e8e8, #c5c5c5, #aaaaaa);
+  background-size: 600% 600%;
+  animation: AnimationName 50s ease infinite;
 }
-
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .main-1 {
   padding-left: 20px;
   padding-right: 20px;
@@ -17,9 +32,15 @@ body, html {
   padding-left: inherit;
   padding-right: inherit;
   flex-wrap: nowrap;
-  background-color: rgba(127, 255, 212, 0.685);
   margin-top: 10px;
   color: #ffffff;
+  text-transform: uppercase;
+  line-height: 0.8;
+  letter-spacing: 3px;
+  font-family: "Bai Jamjuree", sans-serif;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 20px #444444;
+  border-radius: 20px;
 }
 
 .top-container {
@@ -28,6 +49,7 @@ body, html {
   height: 500px;
   text-align: center;
   margin-bottom: 10px;
+  margin-top: 10px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -38,12 +60,16 @@ body, html {
   box-shadow: 5px 4px 20px rgba(63, 63, 63, 0.25);
 }
 
-.fundo {
+.main-1 .fundo {
   background-image: url("../Pictures/kisspng-cloud-computing-international-cloud-atlas-cloud-5af2bd9c3812e1.5207156415258576922297.png");
-  opacity: 20%;
+  opacity: 0.2; /* Corrigi a opacidade para um valor entre 0 e 1 */
   animation: cloudsAnimation 30s linear infinite;
   position: absolute;
   top: 0;
+  left: 0; /* Adicionei a propriedade left para definir a posição inicial */
+  width: 100%; /* Defina a largura da imagem */
+  height: auto; /* Mantenha a proporção original da imagem */
+  background: transparent;
 }
 
 @keyframes cloudsAnimation {
@@ -51,7 +77,7 @@ body, html {
     transform: translateX(-100%);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(calc(100% + largura_da_imagem)); /* Mova até o limite da tela */
   }
 }
 .title-top h1 {
@@ -82,7 +108,7 @@ body, html {
   font-family: "Space Mono", monospace;
   color: rgba(201, 215, 230, 0.5);
   text-shadow: 2px 2px 2px rgba(214, 225, 239, 0.6), 0 0 0 #000, 2px 2px 2px rgba(214, 225, 239, 0);
-  background-color: rgba(0, 0, 0, 0.5333333333);
+  background-color: #e8e8e8;
   overflow-x: auto;
 }
 
@@ -99,22 +125,6 @@ body, html {
   padding-top: 102px;
 }
 
-.parallax {
-  /* The image used */
-  background-image: url("../Pictures/thomas-richter-B09tL5bSQJk-unsplash.jpg");
-  /* Set a specific height */
-  min-height: 500px;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
 .menuitems p {
   margin: 16px;
   font-size: 96px;
@@ -127,7 +137,7 @@ body, html {
 .menuitems p::before {
   content: attr(data-item);
   transition: all 1s ease-in-out;
-  color: #8254ff;
+  color: #54ffa1;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -163,7 +173,7 @@ nav .menuItems li a {
 nav .menuItems li a::before {
   content: attr(data-item);
   transition: 0.5s;
-  color: #8254ff;
+  color: #54ff7f;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -197,7 +207,7 @@ nav .menuItems li a:hover::before {
   width: 85vmin;
   height: 25em;
   margin: 10px auto;
-  border: 8px solid;
+  border-radius: 20px;
   -o-border-image: linear-gradient(-50deg, green, #00b300, forestgreen, green, lightgreen, #00e600, green) 1;
      border-image: linear-gradient(-50deg, green, #00b300, forestgreen, green, lightgreen, #00e600, green) 1;
   transition: 0.3s ease-in-out;
@@ -210,7 +220,7 @@ nav .menuItems li a:hover::before {
   display: flex;
   width: 100%;
   padding: 1rem 0.75rem;
-  background: #186218;
+  background: #1e421e;
   transition: 0.4s ease-in-out;
   z-index: 1;
 }
@@ -263,7 +273,7 @@ nav .menuItems li a:hover::before {
 .dot {
   width: 14px;
   height: 14px;
-  background: yellow;
+  background: rgba(255, 255, 0, 0.589);
   border: 1px solid indigo;
   border-radius: 50%;
   transition: 0.3s ease-in-out 0.3s;
@@ -279,6 +289,7 @@ nav .menuItems li a:hover::before {
   background: #fff;
   box-shadow: inset 1px 1px 15px 0 rgba(0, 0, 0, 0.4);
   overflow-y: scroll;
+  color: #000;
 }
 
 .wrap:hover .overlay {
@@ -401,35 +412,27 @@ nav .menuItems li a:hover::before {
   animation-delay: 2.4s;
 }
 
-.cards .red {
-  background-color: #f43f5e;
-}
-
-.cards .blue {
-  background-color: #3b82f6;
-}
-
-.cards .green {
-  background-color: #22c55e;
-}
-
 .cards {
-  display: inline-flex;
+  display: flex;
   text-align: center;
   cursor: pointer;
-  width: 0;
   transition: all 400ms ease 0s;
+  overflow: auto;
+  overflow-x: auto;
 }
 
 .card {
-  border-radius: 10px;
   color: white;
   padding: 10px;
   padding-bottom: 0;
   padding-top: 0;
-  margin-left: 20px;
-  margin-right: 20px;
   transition: 400ms;
+  background: radial-gradient(178.94% 106.41% at 26.42% 106.41%, #FFF7B1 0%, rgba(255, 255, 255, 0) 71.88%), #FFFFFF;
+  box-shadow: 0px 155px 62px rgba(0, 0, 0, 0.01), 0px 87px 52px rgba(0, 0, 0, 0.05), 0px 39px 39px rgba(0, 0, 0, 0.09), 0px 10px 21px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  border-style: solid;
+  border-color: darkgreen;
+  margin: 10px;
 }
 
 .cards .card p.tip {
