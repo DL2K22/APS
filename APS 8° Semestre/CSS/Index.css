@@ -59,6 +59,7 @@ body, html {
   padding-left: inherit;
   padding-right: inherit;
   width: -webkit-fill-available;
+  height: 185px;
   margin-left: 20px;
   font-size: 20px;
   text-shadow: rgba(214, 225, 239, 0.6) 2px 2px 2px, rgb(0, 0, 0) 0px 0px 0px, rgba(214, 225, 239, 0) 2px 2px 2px;
@@ -336,7 +337,7 @@ nav .menuItems li a:hover::before {
   display: flex;
   width: 100%;
   padding: 1rem 0.75rem;
-  background: #1e421e;
+  background: #edffed;
   transition: 0.4s ease-in-out;
   z-index: 1;
 }
@@ -352,6 +353,33 @@ nav .menuItems li a:hover::before {
      border-image: linear-gradient(to bottom, #AEA724 5%, forestgreen 35% 65%, #AEA724 95%) 0 0 0 100%;
   transition: 0.3s ease-in-out 0.2s;
   z-index: 1;
+}
+
+.p-card-1 {
+  width: 850px;
+  line-height: 30px;
+  text-align: justify;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 10px darkgray;
+}
+
+.p-card-2 {
+  width: 850px;
+  line-height: 30px;
+  text-align: justify;
+  letter-spacing: 2px;
+  text-shadow: 10px 10px 10px darkgray;
+}
+
+.image-content-1 {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  width: 30%;
+  height: 100%;
+  background-image: url(../Pictures/co2.png);
+  background-size: cover;
+  transition: 0.3s ease-in-out;
 }
 
 .image-content {
@@ -408,25 +436,17 @@ nav .menuItems li a:hover::before {
   color: #000;
 }
 
-.wrap:hover .overlay {
+.wrap-ativado .overlay {
   transform: translateX(-100%);
 }
-
-.wrap:hover .image-content {
+.wrap-ativado .image-content {
   width: 30vmin;
 }
-
-.wrap:hover .dots {
+.wrap-ativado .dots {
   transform: translateX(1rem);
 }
-
-.wrap:hover .dots .dot {
+.wrap-ativado .dots .dot {
   background: white;
-}
-
-.wrap:hover > .card:not(:hover) {
-  filter: blur(10px);
-  transform: scale(0.9, 0.9);
 }
 
 /* Animations and timing delays */
@@ -542,7 +562,6 @@ nav .menuItems li a:hover::before {
 }
 
 .card {
-  color: white;
   padding: 10px;
   padding-bottom: 0;
   padding-top: 0;

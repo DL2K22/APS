@@ -3,7 +3,7 @@
 /*                                    card                                    */
 /* -------------------------------------------------------------------------- */
 
-const ul = document.querySelector('ul');
+const ul = document.querySelector('.to-do-list');
 const input = document.getElementById('item');
 let itemsArray = localStorage.getItem('items') ?
 JSON.parse(localStorage.getItem('items')) : [];
@@ -43,4 +43,25 @@ function myFunction() {
   } else {
     header.classList.remove("sticky");
   }
+}
+
+
+
+
+const ativar_cards = document.querySelectorAll(".wrap");
+
+ativar_cards.forEach(ativar_card => {
+  ativar_card.addEventListener('click', card_ativado);
+});
+
+let isRunning = false;
+
+function card_ativado () {
+  if(isRunning){
+      this.classList.remove('wrap-ativado');
+      isRunning = false;
+    } else {
+      this.classList.add('wrap-ativado');
+      isRunning = true;
+    }
 }
