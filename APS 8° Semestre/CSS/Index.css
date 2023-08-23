@@ -6,6 +6,7 @@ body, html {
   font-family: Arial, Helvetica, sans-serif;
   background: linear-gradient(269deg, #e8e8e8, #c5c5c5, #aaaaaa);
   background-size: 600% 600%;
+  background-repeat: no-repeat;
   animation: AnimationName 50s ease infinite;
 }
 @keyframes AnimationName {
@@ -27,19 +28,46 @@ body, html {
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding-bottom: 20px;
   padding-left: inherit;
   padding-right: inherit;
   flex-wrap: nowrap;
   margin-top: 10px;
-  color: #ffffff;
+}
+
+.to-do-app {
+  padding-bottom: 20px;
+  padding-left: inherit;
+  padding-right: inherit;
+  width: -webkit-fill-available;
+  font-size: 20px;
+  text-shadow: rgba(214, 225, 239, 0.6) 2px 2px 2px, rgb(0, 0, 0) 0px 0px 0px, rgba(214, 225, 239, 0) 2px 2px 2px;
   text-transform: uppercase;
   line-height: 0.8;
   letter-spacing: 3px;
   font-family: "Bai Jamjuree", sans-serif;
-  background: #e0e0e0;
-  box-shadow: 15px 15px 20px #444444;
+  background: rgb(224, 224, 224);
+  box-shadow: rgb(68, 68, 68) 15px 15px 20px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 100;
+}
+
+.card-list {
+  padding-bottom: 20px;
+  padding-left: inherit;
+  padding-right: inherit;
+  width: -webkit-fill-available;
+  margin-left: 20px;
+  font-size: 20px;
+  text-shadow: rgba(214, 225, 239, 0.6) 2px 2px 2px, rgb(0, 0, 0) 0px 0px 0px, rgba(214, 225, 239, 0) 2px 2px 2px;
+  text-transform: uppercase;
+  line-height: 0.8;
+  letter-spacing: 3px;
+  font-family: "Bai Jamjuree", sans-serif;
+  background: rgb(224, 224, 224);
+  box-shadow: rgb(68, 68, 68) 15px 15px 20px;
   border-radius: 20px;
   position: relative;
   z-index: 100;
@@ -120,6 +148,7 @@ body, html {
   background: #e8e8e8;
   box-shadow: 20px 20px 60px #c5c5c5, -20px -20px 60px #ffffff;
   transition: 0.3s;
+  width: 80%;
 }
 
 .input:focus {
@@ -185,7 +214,7 @@ body, html {
   color: #f1f1f1;
   border-radius: 20px;
   position: relative;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .content {
@@ -292,7 +321,6 @@ nav .menuItems li a:hover::before {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  width: 85vmin;
   height: 25em;
   margin: 10px auto;
   border-radius: 20px;
@@ -330,7 +358,7 @@ nav .menuItems li a:hover::before {
   position: absolute;
   top: 0;
   right: 0;
-  width: 60vmin;
+  width: 100vmin;
   height: 100%;
   background-image: url("https://assets.codepen.io/4787486/trees.png");
   background-size: cover;
@@ -371,7 +399,7 @@ nav .menuItems li a:hover::before {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50vmin;
+  width: 100%;
   height: 100%;
   padding: 3vmin 4vmin;
   background: #fff;
@@ -381,17 +409,11 @@ nav .menuItems li a:hover::before {
 }
 
 .wrap:hover .overlay {
-  transform: translateX(-60vmin);
+  transform: translateX(-100%);
 }
 
 .wrap:hover .image-content {
   width: 30vmin;
-}
-
-.wrap:hover .overlay-content {
-  border: none;
-  transition-delay: 0.2s;
-  transform: translateX(60vmin);
 }
 
 .wrap:hover .dots {
@@ -400,6 +422,11 @@ nav .menuItems li a:hover::before {
 
 .wrap:hover .dots .dot {
   background: white;
+}
+
+.wrap:hover > .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
 }
 
 /* Animations and timing delays */
@@ -505,8 +532,13 @@ nav .menuItems li a:hover::before {
   text-align: center;
   cursor: pointer;
   transition: all 400ms ease 0s;
-  overflow: auto;
-  overflow-x: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: stretch;
 }
 
 .card {
@@ -514,6 +546,7 @@ nav .menuItems li a:hover::before {
   padding: 10px;
   padding-bottom: 0;
   padding-top: 0;
+  width: -webkit-fill-available;
   transition: 400ms;
   background: radial-gradient(178.94% 106.41% at 26.42% 106.41%, #FFF7B1 0%, rgba(255, 255, 255, 0) 71.88%), #FFFFFF;
   box-shadow: 0px 155px 62px rgba(0, 0, 0, 0.01), 0px 87px 52px rgba(0, 0, 0, 0.05), 0px 39px 39px rgba(0, 0, 0, 0.09), 0px 10px 21px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
@@ -530,79 +563,4 @@ nav .menuItems li a:hover::before {
 
 .cards .card p.second-text {
   font-size: 0.7em;
-}
-
-.cards:hover > .card:not(:hover) {
-  filter: blur(10px);
-  transform: scale(0.9, 0.9);
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  .main-1 {
-    padding: 20px;
-  }
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 10px;
-    padding-bottom: 50px;
-    flex-wrap: nowrap;
-    background-color: rgba(127, 255, 212, 0.445);
-    margin-top: 10px;
-  }
-  .top-container {
-    display: flex;
-    background-color: rgba(241, 241, 241, 0.231372549);
-    height: 500px;
-    text-align: center;
-    margin-bottom: 10px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .title-top h1 {
-    font-size: 50px;
-  }
-  .header {
-    padding: 10px 16px;
-    background: #242424;
-    color: #f1f1f1;
-  }
-  .content {
-    padding: 16px;
-    background-color: rgba(0, 0, 0, 0.3960784314);
-    margin-top: 10px;
-  }
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    left: 0;
-    transition: width 2s ease-in-out;
-  }
-  .sticky + .content {
-    padding-top: 102px;
-  }
-  .parallax {
-    /* The image used */
-    background-image: url("../Pictures/thomas-richter-B09tL5bSQJk-unsplash.jpg");
-    /* Set a specific height */
-    min-height: 500px;
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-}
-/* Estilos para telas ainda menores, como smartphones em modo retrato */
-@media screen and (max-width: 480px) {
-  .title-top h1 {
-    font-size: 28px;
-  }
 }/*# sourceMappingURL=Index.css.map */
