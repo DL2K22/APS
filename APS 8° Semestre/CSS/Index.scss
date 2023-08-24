@@ -1,34 +1,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&family=Josefin+Slab:wght@100&family=Michroma&family=Overpass+Mono:wght@300&family=Syncopate&family=Thasadith&family=Tsukimi+Rounded:wght@300&display=swap');
 
-body, html {
+body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-
-  background: linear-gradient(269deg, #ffffff, #c5c5c5, #d8d8d8);
-  background-size: 600% 600%;
-  background-repeat: no-repeat;
-
-  -webkit-animation: AnimationName 50s ease infinite;
-  -moz-animation: AnimationName 50s ease infinite;
-  animation: AnimationName 50s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-@-moz-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-@keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+html {
+  --s: 50px;
+  --c: #191b22;
+  --_s: calc(2*var(--s)) calc(2*var(--s));
+  --_g: 35.36% 35.36% at;
+  --_c: #0000 66%,#20222a 68% 70%,#0000 72%;
+  background: 
+    radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
+    radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
+    radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
+    radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
+    repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
+    radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+  background-attachment: fixed;
 }
 
 .main-1{
@@ -196,7 +188,7 @@ body, html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: #1b281d;
+  color: #e8ffeb;
   font-family: 'Righteous', cursive;
   letter-spacing: 10px;
   border-radius: 20px;
@@ -227,14 +219,14 @@ body, html {
 
 .title-top h1{
   font-size: 100px;
-  text-shadow: 8px 8px 5px #222b2599, 0 0 0 #000, 2px 2px 2px #d6e1ef00;
+  text-shadow: 8px 8px 5px rgb(51 66 56 / 60%), 0 0 0 #000, 2px 2px 2px rgba(214, 225, 239, 0);
 }
 
 .title-top p{
   bottom: 20%;
   position: relative;
   font-size: 20px;
-  text-shadow: 10px 10px 10px #7a998599, 0 0 0 #000, 2px 2px 2px #d6e1ef00;
+  text-shadow: 10px 10px 5px rgb(27 34 30 / 60%), 0 0 0 #000, 2px 2px 2px rgba(214, 225, 239, 0);
 }
 
 .header {
@@ -313,18 +305,19 @@ nav {
 
       a {
         text-decoration: none;
-        color: #8f8f8f;
+        color: #ffffff;
         font-size: 24px;
         font-weight: 400;
         transition: all 0.5s ease-in-out;
+        letter-spacing: 2px;
         position: relative;
         text-transform: uppercase;
-        text-shadow: 2px 2px 2px #00000099, 0 0 0 #000, 2px 2px 2px #d6e1ef00;
+        text-shadow: 2px 2px 5px rgb(255 255 255 / 60%), 0 0 0 #000, 10px 10px 2px rgba(214, 225, 239, 0);
 
         &::before {
           content: attr(data-item);
           transition: 0.5s;
-          color: #54ff7f;
+          color: #00ff40;
           position: absolute;
           top: 0;
           bottom: 0;
@@ -332,6 +325,7 @@ nav {
           right: 0;
           width: 0;
           overflow: hidden;
+          text-shadow: 2px 2px 2px #00000099, 0 0 0 #000, 2px 2px 2px #d6e1ef00;
         }
 
         &:hover {
@@ -364,8 +358,9 @@ nav {
 	justify-content: space-between;
 	height: 25em;
 	margin: 10px auto;
-  border-radius: 20px;
-	border-image: linear-gradient(-50deg, green, #00b300, forestgreen, green, lightgreen, #00e600, green) 1;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #c1dac1;
 	transition: .3s ease-in-out;
 	position: relative;
 	overflow: hidden;
@@ -376,11 +371,12 @@ nav {
 	display: flex;
 	width: 100%;
 	padding: 1rem .75rem;
-  background: rgba(0, 0, 0, 0.90);
+  background: rgb(53 58 51 / 90%);
   box-shadow: 0px 155px 62px rgba(0, 0, 0, 0.01), 0px 87px 52px rgba(0, 0, 0, 0.05), 0px 39px 39px rgba(0, 0, 0, 0.09), 0px 10px 21px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
 	transition: .4s ease-in-out;
 	z-index: 1;
   justify-content: space-between;
+  border-radius: 10px;
 }
 .overlay-content {
 	display: flex;
@@ -389,11 +385,10 @@ nav {
 	width: 15vmin;
 	padding: .5rem 0 0 .5rem;
 	border: 3px solid;
-  border-radius: 50%;
 	border-image: 
     	linear-gradient(
       	to bottom, 
-      	#AEA724 5%,
+      	#fff200 5%,
       	forestgreen 35% 65%,
       	#AEA724 95%
     	) 0 0 0 100%;
