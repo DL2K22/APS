@@ -13,8 +13,8 @@
     <div class="top-container">
       <div class="title-top">
         <img class="fundo" src="/APS 8° Semestre/Pictures/kisspng-cloud-computing-international-cloud-atlas-cloud-5af2bd9c3812e1.5207156415258576922297.png" alt="">
-        <h1>ENVIRONMENT PARK</h1>
-        <p>Uma forma mais sustentável de se estacionar</p>
+        <h1>environment consciousness</h1>
+        <p>Uma forma mais sustentável de se relembrar de seus atos.</p>
       </div>
     </div>
 
@@ -62,6 +62,21 @@
           
                 <div class="front-content">
                   <small class="badge">Pasta</small>
+                  <div class="escolher">
+                    <label for="numero1">Escolha um número:</label>
+                    <select id="numero1" name="numero1">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </div>
                   <div class="description">
                     <div class="title">
                       <p class="title">
@@ -117,6 +132,21 @@
           
                 <div class="front-content">
                   <small class="badge">Pasta</small>
+                  <div class="escolher">
+                    <label for="numero2">Escolha um número:</label>
+                    <select id="numero2" name="numero2">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </div>
                   <div class="description">
                     <div class="title">
                       <p class="title">
@@ -172,6 +202,21 @@
           
                 <div class="front-content">
                   <small class="badge">Pasta</small>
+                  <div class="escolher">
+                    <label for="numero3">Escolha um número:</label>
+                    <select id="numero3" name="numero3">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </div>
                   <div class="description">
                     <div class="title">
                       <p class="title">
@@ -227,6 +272,21 @@
           
                 <div class="front-content">
                   <small class="badge">Pasta</small>
+                  <div class="escolher">
+                    <label for="numero4">Escolha um número:</label>
+                    <select id="numero4" name="numero4">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </div>
                   <div class="description">
                     <div class="title">
                       <p class="title">
@@ -242,13 +302,18 @@
               </div>
             </div>
           </div>
-              <div class="dots animate">
-                <div class="dot animate slide-up delay-6"></div>
-                <div class="dot animate slide-up delay-7"></div>
-                <div class="dot animate slide-up delay-8"></div>
-              </div>
+          <div class="dots animate">
+            <div class="dot animate slide-up delay-6"></div>
+            <div class="dot animate slide-up delay-7"></div>
+            <div class="dot animate slide-up delay-8"></div>
+          </div>
         </div>
           <div class="text">
+            <div class="dots animate">
+              <div class="dot animate slide-up delay-6"></div>
+              <div class="dot animate slide-up delay-7"></div>
+              <div class="dot animate slide-up delay-8"></div>
+            </div>
           </div>
       </div>
     </div>
@@ -258,14 +323,15 @@
     <div class="container">
       <div class="to-do-app">
         <h2>Atividades Realizadas</h2>
-        <input type="text" id="item" class="input" placeholder="Enter item...">
-        <br>
-        <br>
         <button onclick="add()" class="button2">Adicionar Item <i class="fa-solid fa-plus"></i></button>
         <button onclick="del()" class="button2">Limpar <i class="fa-solid fa-ban"></i></button>
       </div>
       <div class="card-list">
+        <p>Números salvos:</p>
         <ul class="to-do-list"></ul>
+        <div class="grafico">
+          <canvas id="chartCanvas"></canvas>
+        </div>
       </div>
     </div>
   </section>
