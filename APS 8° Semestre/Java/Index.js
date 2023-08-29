@@ -42,6 +42,15 @@ function exibirNumerosSalvos() {
 }
 exibirNumerosSalvos();
 
+
+
+function getRandomGreenColor() {
+  const hue = Math.floor(Math.random() * 80) + 80; // Gerar tons de verde (80-140)
+  const saturation = Math.floor(Math.random() * 10) + 20; // Saturação entre 60 e 80
+  const lightness = Math.floor(Math.random() * 40) + 40; // Luminosidade entre 40 e 60
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+}
+
 function exibirGrafico() {
   const numerosSalvos = JSON.parse(localStorage.getItem('numeros'));
   if (numerosSalvos) {
@@ -51,12 +60,16 @@ function exibirGrafico() {
 
     ctx.clearRect(0, 0, graficoCanvas.width, graficoCanvas.height);
 
+    const textWidth = -10;
+    const textHeight = 5;
+
     let startAngle = 0;
     for (let i = 0; i < numerosArray.length; i++) {
       const sliceAngle = (numerosArray[i] / total) * (2 * Math.PI);
       const endAngle = startAngle + sliceAngle;
+      const middleAngle = startAngle + sliceAngle / 2;
 
-      ctx.fillStyle = getRandomColor(); // Define uma cor aleatória para cada fatia
+      ctx.fillStyle = getRandomGreenColor();
       ctx.beginPath();
       ctx.moveTo(graficoCanvas.width / 2, graficoCanvas.height / 2);
       ctx.arc(
@@ -69,19 +82,25 @@ function exibirGrafico() {
       ctx.lineTo(graficoCanvas.width / 2, graficoCanvas.height / 2);
       ctx.fill();
 
+      // Calcular a posição para mostrar a porcentagem dentro do pedaço
+      const textX = Math.cos(middleAngle) * (graficoCanvas.height / 4 - textWidth) + graficoCanvas.width / 2;
+      const textY = Math.sin(middleAngle) * (graficoCanvas.height / 4 - textHeight) + graficoCanvas.height / 2;
+
+      const percentage = ((numerosArray[i] / total) * 100).toFixed(1);
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 14px Arial';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(`${percentage}%`, textX, textY);
+
       startAngle = endAngle;
     }
   }
 }
 
-function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
+
+
+
 
 
 /* -------------------------------------------------------------------------- */
@@ -102,21 +121,10 @@ function myFunction() {
 
 
 const ativar_cards = document.querySelectorAll(".dots");
-const ativado = document.querySelector(".wrap");
-let isRunning = false;
 
 ativar_cards.forEach(ativar_card => {
   ativar_card.addEventListener('click', () => {
-    if(isRunning){
-      const wrap = ativar_card.closest('.wrap');
-      wrap.classList.remove('wrap-ativado');
-      isRunning = false;
-      console.log('adad');
-    } else {
-      const wrap = ativar_card.closest('.wrap');
-      wrap.classList.add('wrap-ativado');
-      isRunning = true;
-      console.log('adadsssssss');
-    }
+    const wrap = ativar_card.closest('.wrap');
+    wrap.classList.toggle('wrap-ativado');
   });
 });

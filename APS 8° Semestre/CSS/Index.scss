@@ -692,6 +692,7 @@ nav {
 
 .text {
 	position: absolute;
+  opacity: 0%;
 	top: 0;
 	right: 0;
 	width: 100%;
@@ -716,6 +717,9 @@ nav {
     .dot {
       background: rgb(0, 0, 0);
     }
+  }
+  .text{
+    opacity: 100%;
   }
 }
 
@@ -875,4 +879,3 @@ nav {
 .cards .card p.second-text {
   font-size: .7em;
 }
-

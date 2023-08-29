@@ -659,6 +659,7 @@ nav .menuItems li a:hover::before {
 
 .text {
   position: absolute;
+  opacity: 0%;
   top: 0;
   right: 0;
   width: 100%;
@@ -680,6 +681,9 @@ nav .menuItems li a:hover::before {
 }
 .wrap-ativado .dots .dot {
   background: rgb(0, 0, 0);
+}
+.wrap-ativado .text {
+  opacity: 100%;
 }
 
 /* Animations and timing delays */
