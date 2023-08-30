@@ -9,10 +9,10 @@ const ctx = graficoCanvas.getContext('2d');
 
 function add() {
   const numeros = {
-    'numero 1': parseFloat(document.getElementById('numero1').value),
-    'numero 2': parseFloat(document.getElementById('numero2').value),
-    'numero 3': parseFloat(document.getElementById('numero3').value),
-    'numero 4': parseFloat(document.getElementById('numero4').value),
+    'USO DE ENERGIA': parseFloat(document.getElementById('numero1').value),
+    'USO DE ÁGUA': parseFloat(document.getElementById('numero2').value),
+    'USO DE RECICLAGEM': parseFloat(document.getElementById('numero3').value),
+    'USO DE TRANSPORTE': parseFloat(document.getElementById('numero4').value),
   };
   localStorage.setItem('numeros', JSON.stringify(numeros));
   exibirNumerosSalvos();
