@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" href="/APS 8° Semestre/CSS/Index.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
 
-  <section class="main-1">
-    <div class="top-container">
-      <div class="title-top">
-        <img class="fundo" src="/APS 8° Semestre/Pictures/kisspng-cloud-computing-international-cloud-atlas-cloud-5af2bd9c3812e1.5207156415258576922297.png" alt="">
-        <h1>environment consciousness</h1>
-        <p>Uma forma mais sustentável de se relembrar de seus atos.</p>
-      </div>
-    </div>
+  
+<nav class="header" id="myHeader">
+  <ul class="menuItems">
+    <li><a href='#' data-item='Home'>Home</a></li>
+    <li><a href='#' data-item='About'>About</a></li>
+    <li><a href='#' data-item='Projects'>Projects</a></li>
+    <li><a href='#' data-item='Blog'>Blog</a></li>
+    <li><a href='#' data-item='Contact'>Contact</a></li>
+  </ul>
+</nav>
 
-    <div class="header" id="myHeader">
-      <nav>
-        <ul class="menuItems">
-          <li><a href='#' data-item='Home'>Home</a></li>
-          <li><a href='#' data-item='About'>About</a></li>
-          <li><a href='#' data-item='Projects'>Projects</a></li>
-          <li><a href='#' data-item='Blog'>Blog</a></li>
-          <li><a href='#' data-item='Contact'>Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </section>
 
+<section class="first">
+  <div class="top-container">
+    <div class="title-top">
+      <img class="fundo" src="/APS 8° Semestre/Pictures/kisspng-cloud-computing-international-cloud-atlas-cloud-5af2bd9c3812e1.5207156415258576922297.png" alt="">
+      <h1>environment consciousness</h1>
+      <p>Uma forma mais sustentável de se relembrar de seus atos.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="second">
   <div class="cards">
     <div class="card red">
       <div class="wrap animate pop">
@@ -98,7 +103,23 @@
                 <div class="dot animate slide-up delay-8"></div>
               </div>
         </div>
-          <div class="text">
+          <div class="text animate slide delay-5">
+            
+            <div class="lixo">
+              <a href="##" class="icon" onclick="dellembrete()">
+                <img src="/APS 8° Semestre/Pictures/bin.png" alt="" class="fas fa-search" style="width: 80%;">
+              </a>
+            </div>
+
+            <ul class="lembrete"></ul>
+
+            <div class="search-box">
+              <input type="text" id="item" placeholder="Adicionar..." />
+              <a href="##" class="icon" onclick="addlembrete()">
+                  <img src="/APS 8° Semestre/Pictures/adicionar.png" alt="" class="fas fa-search" style="width: 80%;">
+              </a>
+            </div>
+
             <div class="dots animate">
               <div class="dot animate slide-up delay-6"></div>
               <div class="dot animate slide-up delay-7"></div>
@@ -173,7 +194,22 @@
                 <div class="dot animate slide-up delay-8"></div>
               </div>
         </div>
-          <div class="text">
+          <div class="text animate slide delay-5">
+                        
+            <div class="lixo">
+              <a href="##" class="icon" onclick="dellembrete()">
+                <img src="/APS 8° Semestre/Pictures/bin.png" alt="" class="fas fa-search" style="width: 80%;">
+              </a>
+            </div>
+
+            <ul class="lembrete"></ul>
+
+            <div class="search-box">
+              <input type="text" id="item" placeholder="Adicionar..." />
+              <a href="##" class="icon" onclick="addlembrete()">
+                  <img src="/APS 8° Semestre/Pictures/adicionar.png" alt="" class="fas fa-search" style="width: 80%;">
+              </a>
+            </div>
             <div class="dots animate">
               <div class="dot animate slide-up delay-6"></div>
               <div class="dot animate slide-up delay-7"></div>
@@ -248,7 +284,22 @@
                 <div class="dot animate slide-up delay-8"></div>
               </div>
         </div>
-          <div class="text">
+          <div class="text animate slide delay-5">
+                        
+            <div class="lixo">
+              <a href="##" class="icon" onclick="dellembrete()">
+                <img src="/APS 8° Semestre/Pictures/bin.png" alt="" class="fas fa-search" style="width: 80%;">
+              </a>
+            </div>
+
+            <ul class="lembrete"></ul>
+
+            <div class="search-box">
+              <input type="text" id="item" placeholder="Adicionar..." />
+              <a href="##" class="icon" onclick="addlembrete()">
+                  <img src="/APS 8° Semestre/Pictures/adicionar.png" alt="" class="fas fa-search" style="width: 80%;">
+              </a>
+            </div>
             <div class="dots animate">
               <div class="dot animate slide-up delay-6"></div>
               <div class="dot animate slide-up delay-7"></div>
@@ -324,6 +375,21 @@
           </div>
         </div>
           <div class="text animate slide delay-5">
+                        
+            <div class="lixo">
+              <a href="##" class="icon" onclick="dellembrete()">
+                <img src="/APS 8° Semestre/Pictures/bin.png" alt="" class="fas fa-search" style="width: 80%;">
+              </a>
+            </div>
+
+            <ul class="lembrete"></ul>
+
+            <div class="search-box">
+              <input type="text" id="item" placeholder="Adicionar..." />
+              <a href="##" class="icon" onclick="addlembrete()">
+                  <img src="/APS 8° Semestre/Pictures/adicionar.png" alt="" class="fas fa-search" style="width: 80%;">
+              </a>
+            </div>
             <div class="dots animate">
               <div class="dot animate slide-up delay-6"></div>
               <div class="dot animate slide-up delay-7"></div>
@@ -333,23 +399,30 @@
       </div>
     </div>
   </div>
+</section>
 
-  <section class="main-1">
-    <div class="container">
-      <div class="to-do-app">
-        <h3>Atividades Realizadas</h3>
+
+
+<section class="third">
+  <div class="container">
+    <div class="to-do-app">
+      <h3>Atividades Realizadas</h3>
+      <div class="buttons">
         <button onclick="add()" class="button2">Adicionar Item <i class="fa-solid fa-plus"></i></button>
         <button onclick="del()" class="button2">Limpar <i class="fa-solid fa-ban"></i></button>
       </div>
-      <div class="card-list">
-        <p>Quantidade Total do Má Uso de Atividades Relacionadas ao Meio Ambiente:</p>
-        <ul class="to-do-list"></ul>
-        <div class="grafico">
-          <canvas id="chartCanvas"></canvas>
-        </div>
+    </div>
+    <div class="card-list">
+      <p>Quantidade Total do Má Uso de Atividades Relacionadas ao Meio Ambiente:</p>
+      <ul class="to-do-list"></ul>
+      <div class="grafico">
+        <canvas id="chartCanvas"></canvas>
       </div>
     </div>
-  </section>
-  <script src="/APS 8° Semestre/Java/Index.js"></script>
+  </div>
+</section>
+
+<script src="/APS 8° Semestre/Java/Index.js"></script>
+
 </body>
 </html>

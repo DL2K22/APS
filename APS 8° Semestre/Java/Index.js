@@ -128,3 +128,67 @@ ativar_cards.forEach(ativar_card => {
     wrap.classList.toggle('wrap-ativado');
   });
 });
+
+
+window.addEventListener("scroll", () => {
+  const logoSection = document.querySelector(".first");
+  const scrollPosition = window.scrollY;
+
+  // Reduz a opacidade do logotipo à medida que a página é rolada
+  logoSection.style.opacity = 1 - scrollPosition / 500;
+});
+
+
+
+
+
+
+
+
+
+const lembrete = document.querySelector('.lembrete');
+const input = document.getElementById('item');
+let itemsArray = localStorage.getItem('items') ?
+JSON.parse(localStorage.getItem('items')) : [];
+
+itemsArray.forEach(addTask);
+
+function addTask(text){
+  const li = document.createElement('li')
+  li.textContent = text;
+  lembrete.appendChild(li);
+}
+
+function addlembrete(){
+  const SearchBox = document.querySelectorAll('.search-box');
+  SearchBox.forEach(function(searchBox) {
+    const width = searchBox.offsetWidth;
+    if (width > 100) {
+      itemsArray.push(input.value);
+      localStorage.setItem('items', JSON.stringify(itemsArray));
+      addTask(input.value);
+      input.value = '';
+    } else {
+      console.log("Item não atende ao critério de distância.");
+    }
+  });
+};
+
+function dellembrete(){
+  localStorage.clear();
+  lembrete.innerHTML = '';
+  itemsArray = [];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -16,9 +16,29 @@ html {
   background-attachment: fixed;
 }
 
-.main-1 {
+section {
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.first {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.third {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
@@ -55,6 +75,7 @@ html {
   justify-content: center;
   align-items: center;
   align-content: center;
+  flex-direction: column;
 }
 
 .card-list {
@@ -116,6 +137,12 @@ html {
   left: 0;
   right: 0;
   font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
 }
 
 .button2 {
@@ -220,7 +247,7 @@ html {
   box-shadow: 5px 4px 20px rgba(63, 63, 63, 0.25);
 }
 
-.main-1 .fundo {
+.first .fundo {
   background-image: url("../Pictures/kisspng-cloud-computing-international-cloud-atlas-cloud-5af2bd9c3812e1.5207156415258576922297.png");
   opacity: 0.2; /* Corrigi a opacidade para um valor entre 0 e 1 */
   animation: cloudsAnimation 30s linear infinite;
@@ -258,7 +285,8 @@ html {
   padding: 10px 16px;
   background: rgba(0, 0, 0, 0.7333333333);
   color: #f1f1f1;
-  border-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
   position: relative;
   z-index: 1000;
 }
@@ -685,7 +713,7 @@ nav .menuItems li a:hover::before {
   width: 14px;
   height: 14px;
   background: rgba(255, 255, 0, 0.589);
-  border: 1px solid indigo;
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 50%;
   transition: 0.3s ease-in-out 0.3s;
 }
@@ -699,8 +727,30 @@ nav .menuItems li a:hover::before {
   height: 100%;
   background: #fff;
   box-shadow: inset 1px 1px 15px 0 rgba(0, 0, 0, 0.4);
-  overflow-y: scroll;
+  overflow-y: hidden;
   color: #000;
+}
+
+.lembrete {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.lembrete li {
+  padding-right: 50px;
+  text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.4);
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.lembrete ::marker {
+  color: #707070;
+  font-size: 10px;
+  text-transform: uppercase;
 }
 
 .wrap-ativado .overlay {
@@ -890,4 +940,60 @@ nav .menuItems li a:hover::before {
 
 .cards .card p.second-text {
   font-size: 0.7em;
+}
+
+.search-box {
+  position: absolute;
+  top: 50%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  background: #2C3441;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.search-box:hover > input {
+  width: 200px;
+  padding: 0 10px;
+}
+
+.icon:hover {
+  transform: rotate(360deg) scale(0.8);
+}
+
+input {
+  width: 0;
+  border: none;
+  outline: none;
+  padding: 0;
+  background: none;
+  font-size: 1.1rem;
+  transition: 0.5s ease;
+  line-height: 40px;
+  color: #fff;
+}
+
+.icon {
+  color: #21DFCD;
+  float: right;
+  width: 40px;
+  font-size: 1.3rem;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.lixo {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-right: 10px;
+  margin-top: 10px;
 }/*# sourceMappingURL=Index.css.map */
