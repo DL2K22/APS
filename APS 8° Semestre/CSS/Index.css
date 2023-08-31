@@ -52,8 +52,19 @@ section {
   background-color: rgba(127, 255, 212, 0.2);
   border-radius: 50px;
   margin: 20px;
-  margin-top: 5%;
+  margin-top: -5%;
   margin-bottom: 10%;
+}
+
+.title-textPrinc {
+  margin: 50px;
+  margin-top: 5%;
+  color: white;
+  font-size: 50px;
+  font-style: italic;
+  font-variant: petite-caps;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .to-do-app {
