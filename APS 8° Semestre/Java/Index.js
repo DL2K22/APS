@@ -131,11 +131,14 @@ ativar_cards.forEach(ativar_card => {
 
 
 window.addEventListener("scroll", () => {
-  const logoSection = document.querySelector(".first");
+  const FirstSection = document.querySelector(".first");
+  const SecondSection = document.querySelector(".second");
+  const ThirdSection = document.querySelector(".third");
+  //const QuadSection = document.querySelector(".Quad");
   const scrollPosition = window.scrollY;
 
   // Reduz a opacidade do logotipo à medida que a página é rolada
-  logoSection.style.opacity = 1 - scrollPosition / 500;
+  FirstSection.style.opacity = 1 - scrollPosition / 500;
 });
 
 
@@ -160,7 +163,7 @@ function addTask(text){
 }
 
 function addlembrete(){
-  const SearchBox = document.querySelectorAll('.search-box');
+  const SearchBox = document.querySelectorAll('input');
   SearchBox.forEach(function(searchBox) {
     const width = searchBox.offsetWidth;
     if (width > 100) {

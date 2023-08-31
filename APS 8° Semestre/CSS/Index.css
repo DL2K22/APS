@@ -32,33 +32,37 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .third {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding-bottom: 20px;
-  padding-left: inherit;
-  padding-right: inherit;
-  flex-wrap: nowrap;
-  margin-top: 10px;
+.textPrinc {
+  line-height: 40px;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 50px;
+  text-align: justify;
+  color: beige;
+  background-color: rgba(127, 255, 212, 0.2);
+  border-radius: 50px;
+  margin: 20px;
+  margin-top: 5%;
+  margin-bottom: 10%;
 }
 
 .to-do-app {
   display: flex;
   padding-bottom: 20px;
-  padding-left: inherit;
-  padding-right: inherit;
-  width: -webkit-fill-available;
   font-size: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: -webkit-fill-available;
   text-shadow: rgba(214, 225, 239, 0.6) 2px 2px 2px, rgb(0, 0, 0) 0px 0px 0px, rgba(214, 225, 239, 0) 2px 2px 2px;
   text-transform: uppercase;
   line-height: 0.8;
@@ -79,14 +83,16 @@ section {
 }
 
 .card-list {
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-around;
   display: flex;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-left: inherit;
-  padding-right: inherit;
+  padding: 20px;
   width: -webkit-fill-available;
-  height: 185px;
-  margin-left: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 5%;
   font-size: 20px;
   text-shadow: rgba(214, 225, 239, 0.6) 2px 2px 2px, rgb(0, 0, 0) 0px 0px 0px, rgba(214, 225, 239, 0) 2px 2px 2px;
   text-transform: uppercase;
@@ -104,9 +110,8 @@ section {
 
 .to-do-list {
   position: relative;
-  margin: revert;
-  margin-top: 30px;
   width: 400px;
+  margin-bottom: 100px;
 }
 
 .to-do-list li {
@@ -121,21 +126,26 @@ section {
   align-items: center;
   justify-content: center;
   margin: auto;
-  margin-top: 35px;
+  margin-top: 50px;
   position: relative;
   right: 15%;
+}
+
+#chartCanvas {
+  height: 300px;
 }
 
 .card-list p {
   display: flex;
   position: absolute;
   line-height: initial;
-  font-size: 14px;
+  font-size: 18px;
   justify-content: center;
   align-items: center;
   margin: auto;
   left: 0;
   right: 0;
+  top: 20px;
   font-weight: bold;
 }
 
@@ -143,6 +153,7 @@ section {
   display: flex;
   justify-content: space-around;
   width: 400px;
+  margin: 10px;
 }
 
 .button2 {
@@ -245,6 +256,11 @@ section {
   letter-spacing: 10px;
   border-radius: 20px;
   box-shadow: 5px 4px 20px rgba(63, 63, 63, 0.25);
+}
+
+.title-top {
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .first .fundo {
@@ -942,15 +958,22 @@ nav .menuItems li a:hover::before {
   font-size: 0.7em;
 }
 
+.topo-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  flex-wrap: nowrap;
+}
+
 .search-box {
-  position: absolute;
-  top: 50%;
-  left: 53%;
-  transform: translate(-50%, -50%);
-  background: #2C3441;
+  background: rgb(44, 52, 65);
   height: 40px;
   border-radius: 40px;
   padding: 10px;
+  position: relative;
 }
 
 .search-box:hover > input {
