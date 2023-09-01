@@ -109,11 +109,11 @@ function exibirGrafico() {
         label = 'Iguais';
       }
       ctx.fillStyle = '#000';
-      ctx.font = '14px Arial';
+      ctx.font = 'bold 10px Arial';
       ctx.textAlign = 'center';
       ctx.textTransform = 'uppercase';
       ctx.textBaseline = 'middle';
-      ctx.fillText(label, textX, textY);
+      ctx.fillText(label.toUpperCase(), textX, textY);
 
       startAngle = endAngle;
     }
