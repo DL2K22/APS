@@ -44,24 +44,41 @@ exibirNumerosSalvos();
 
 
 
-function getRandomGreenColor() {
-  const hue = Math.floor(Math.random() * 80) + 80; // Gerar tons de verde (80-140)
-  const saturation = Math.floor(Math.random() * 10) + 20; // Saturação entre 60 e 80
-  const lightness = Math.floor(Math.random() * 40) + 40; // Luminosidade entre 40 e 60
-  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+const predefinedColors = ['#FF5733', '#FFC300', '#36A2EB', '#33FF57', '#B136EB'];
+
+// Mantém o registro das cores usadas
+const usedColors = [];
+
+function getRandomColor() {
+  let availableColors = predefinedColors.filter(color => !usedColors.includes(color));
+  if (availableColors.length === 0) {
+    usedColors.length = 0; // Reseta o array de cores usadas quando todas foram usadas
+    availableColors = predefinedColors.slice();
+  }
+  
+  const randomIndex = Math.floor(Math.random() * availableColors.length);
+  const selectedColor = availableColors[randomIndex];
+  usedColors.push(selectedColor); // Adiciona a cor usada ao registro
+  return selectedColor;
 }
+
+
 
 function exibirGrafico() {
   const numerosSalvos = JSON.parse(localStorage.getItem('numeros'));
   if (numerosSalvos) {
     const numerosArray = Object.values(numerosSalvos).map(Number);
 
+    const maxIndex = numerosArray.indexOf(Math.max(...numerosArray)); // Índice do maior número
+
     const total = numerosArray.reduce((acc, num) => acc + num, 0);
 
     ctx.clearRect(0, 0, graficoCanvas.width, graficoCanvas.height);
 
-    const textWidth = -10;
-    const textHeight = 5;
+    const nomesNumeros = Object.keys(numerosSalvos);
+
+    const width = -5;
+    const height = 5;
 
     let startAngle = 0;
     for (let i = 0; i < numerosArray.length; i++) {
@@ -69,7 +86,8 @@ function exibirGrafico() {
       const endAngle = startAngle + sliceAngle;
       const middleAngle = startAngle + sliceAngle / 2;
 
-      ctx.fillStyle = getRandomGreenColor();
+      const color = getRandomColor();
+      ctx.fillStyle = color;
       ctx.beginPath();
       ctx.moveTo(graficoCanvas.width / 2, graficoCanvas.height / 2);
       ctx.arc(
@@ -82,19 +100,26 @@ function exibirGrafico() {
       ctx.lineTo(graficoCanvas.width / 2, graficoCanvas.height / 2);
       ctx.fill();
 
-      // Calcular a posição para mostrar a porcentagem dentro do pedaço
-      const textX = Math.cos(middleAngle) * (graficoCanvas.height / 4 - textWidth) + graficoCanvas.width / 2;
-      const textY = Math.sin(middleAngle) * (graficoCanvas.height / 4 - textHeight) + graficoCanvas.height / 2;
+      // Calcular a posição para mostrar o maior número dentro do pedaço
+      const textX = Math.cos(middleAngle) * (graficoCanvas.height / 4 - width) + graficoCanvas.width / 2;
+      const textY = Math.sin(middleAngle) * (graficoCanvas.height / 4 - height) + graficoCanvas.height / 2;
 
-      const percentage = ((numerosArray[i] / total) * 100).toFixed(1);
-      ctx.fillStyle = '#fff';
-      ctx.font = 'bold 14px Arial';
+      let label = nomesNumeros[i];
+      if (numerosArray.every(num => num === numerosArray[0])) {
+        label = 'Iguais';
+      }
+      ctx.fillStyle = '#000';
+      ctx.font = '14px Arial';
       ctx.textAlign = 'center';
+      ctx.textTransform = 'uppercase';
       ctx.textBaseline = 'middle';
-      ctx.fillText(`${percentage}%`, textX, textY);
+      ctx.fillText(label, textX, textY);
 
       startAngle = endAngle;
     }
+  }
+  else {
+    ctx.clearRect(0, 0, graficoCanvas.width, graficoCanvas.height); // Limpa o canvas se não houver números salvos
   }
 }
 
