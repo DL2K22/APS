@@ -144,6 +144,14 @@ function myFunction() {
   }
 }
 
+const scrollButton = document.getElementById("scrollButton");
+
+// Função para rolar suavemente para a próxima sessão
+scrollButton.addEventListener("click", () => {
+  const contentSection = document.querySelector(".second");
+  contentSection.scrollIntoView({ behavior: "smooth" });
+});
+
 
 const ativar_cards = document.querySelectorAll(".dots");
 

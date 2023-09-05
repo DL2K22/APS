@@ -7,12 +7,7 @@ body {
 }
 
 html {
-  --s: 50px;
-  --c: #191b22;
-  --_s: calc(2*var(--s)) calc(2*var(--s));
-  --_g: 35.36% 35.36% at;
-  --_c: #0000 66%,#20222a 68% 70%,#0000 72%;
-  background: radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s)/var(--_s), radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s)/var(--_s), radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0/var(--_s), radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0/var(--_s), repeating-conic-gradient(var(--c) 0 25%, rgba(0, 0, 0, 0) 0 50%) 0 0/var(--_s), radial-gradient(var(--_c)) 0 calc(var(--s) / 2)/var(--s) var(--s) var(--c);
+  background-color: black;
   background-attachment: fixed;
 }
 
@@ -22,10 +17,31 @@ section {
 }
 
 .first {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.first::before {
+  opacity: 0; /* Ajuste o valor conforme necessário para controlar a opacidade da imagem */
+  position: absolute; /* Posição absoluta para cobrir todo o elemento pai */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1; /* Colocar o pseudo-elemento atrás do conteúdo do elemento pai */
+}
+
+.imgfundo {
+  width: -webkit-fill-available;
+  height: inherit;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+  opacity: 0.5;
 }
 
 .second {
@@ -33,6 +49,57 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: rgb(214, 214, 214);
+}
+
+.second .title-inicial {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: chocolate;
+  width: 80%;
+  margin-top: 5%;
+  font-size: xx-large;
+  text-shadow: rgba(180, 117, 0, 0.6) 2px 2px 5px;
+}
+
+.second .barra {
+  border-style: solid;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-color: #afafaf;
+  border-radius: 10px;
+  width: 80%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.second .text-inicial-content {
+  display: flex;
+  width: 80%;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5%;
+}
+.second .text-inicial-content .text-inicial-content-esq {
+  padding: 20px;
+  letter-spacing: 2px;
+  text-align: justify;
+  font-size: xx-large;
+  text-transform: uppercase;
+  font-stretch: condensed;
+  font-weight: bold;
+  margin-right: 5%;
+  text-shadow: #adadad 2px 2px 2px;
+}
+.second .text-inicial-content .text-inicial-content-dir {
+  padding: 20px;
+  letter-spacing: 2px;
+  text-align: justify;
+  font-size: xx-large;
+  font-stretch: condensed;
+  margin-left: 5%;
+  text-shadow: #adadad 2px 2px 2px;
 }
 
 .third {
@@ -40,6 +107,7 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: rgb(214, 214, 214);
 }
 
 .textPrinc {
@@ -48,8 +116,9 @@ section {
   font-weight: 500;
   padding: 50px;
   text-align: justify;
-  color: beige;
+  color: teal;
   background-color: rgba(127, 255, 212, 0.2);
+  text-shadow: #cccccc 2px 2px 2px;
   border-radius: 50px;
   margin: 20px;
   margin-top: -5%;
@@ -58,9 +127,9 @@ section {
 
 .title-textPrinc {
   margin: 50px;
-  margin-top: 5%;
-  color: white;
-  font-size: 50px;
+  margin-top: 10%;
+  color: rgb(53, 53, 53);
+  font-size: 40px;
   font-style: italic;
   font-variant: petite-caps;
   letter-spacing: 2px;
@@ -254,19 +323,16 @@ section {
 
 .top-container {
   display: flex;
-  background-color: rgba(241, 241, 241, 0.231372549);
   height: 500px;
-  text-align: center;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 5%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: #e8ffeb;
   font-family: "Righteous", cursive;
   letter-spacing: 10px;
-  border-radius: 20px;
-  box-shadow: 5px 4px 20px rgba(63, 63, 63, 0.25);
+  text-align: start;
+  padding: 40px;
 }
 
 .title-top {
@@ -276,7 +342,7 @@ section {
 
 .first .fundo {
   background-image: url("../Pictures/kisspng-cloud-computing-international-cloud-atlas-cloud-5af2bd9c3812e1.5207156415258576922297.png");
-  opacity: 0.2; /* Corrigi a opacidade para um valor entre 0 e 1 */
+  opacity: 0.5; /* Corrigi a opacidade para um valor entre 0 e 1 */
   animation: cloudsAnimation 30s linear infinite;
   position: absolute;
   top: 0;
@@ -302,20 +368,19 @@ section {
 }
 
 .title-top p {
-  bottom: 20%;
+  bottom: 15%;
   position: relative;
   font-size: 20px;
-  text-shadow: 10px 10px 5px rgba(27, 34, 30, 0.6), 0 0 0 #000, 2px 2px 2px rgba(214, 225, 239, 0);
+  text-shadow: 5px 5px 5px rgba(27, 34, 30, 0.6), 0 0 0 #000, 2px 2px 2px rgba(214, 225, 239, 0);
 }
 
 .header {
   padding: 10px 16px;
-  background: rgba(0, 0, 0, 0.7333333333);
   color: #f1f1f1;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  position: relative;
+  position: absolute;
   z-index: 1000;
+  top: 0;
+  width: -webkit-fill-available;
 }
 
 .content {
@@ -337,6 +402,7 @@ section {
   left: 0;
   transition: width 2s ease-in-out;
   border-radius: 0px 0px 10px 10px;
+  background: rgba(0, 0, 0, 0.7333333333);
 }
 
 .sticky + .content {
@@ -392,7 +458,7 @@ nav .menuItems li a {
 nav .menuItems li a::before {
   content: attr(data-item);
   transition: 0.5s;
-  color: #00ff40;
+  color: #009087;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -916,6 +982,7 @@ nav .menuItems li a:hover::before {
   position: relative;
   z-index: 1;
   margin: 10px;
+  margin-bottom: 10%;
   padding: 10px;
   padding-bottom: 0;
   padding-top: 0;
