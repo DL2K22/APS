@@ -1027,13 +1027,18 @@
     z-index: -1; /* Colocar o pseudo-elemento atrás do conteúdo do elemento pai */
   }
   .imgfundo {
-    height: inherit;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
     background-attachment: fixed;
     z-index: -1;
     opacity: 0.5;
+  }
+  .imgfundo img {
+    width: inherit;
+    height: inherit;
   }
   .second {
     display: flex;
@@ -1095,8 +1100,8 @@
     background-color: rgb(214, 214, 214);
   }
   .textPrinc {
-    line-height: 40px;
-    font-size: 20px;
+    line-height: 20px;
+    font-size: 12px;
     font-weight: 500;
     padding: 50px;
     text-align: justify;
@@ -1109,14 +1114,16 @@
     margin-bottom: 10%;
   }
   .title-textPrinc {
-    margin: 50px;
-    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-top: 15%;
     color: rgb(53, 53, 53);
-    font-size: 40px;
     font-style: italic;
     font-variant: petite-caps;
     letter-spacing: 2px;
     text-transform: uppercase;
+  }
+  .title-textPrinc h1 {
+    font-size: 30px;
   }
   .to-do-app {
     display: flex;
@@ -1143,6 +1150,9 @@
     align-content: center;
     flex-direction: column;
   }
+  .to-do-app h1 {
+    font-size: small;
+  }
   .card-list {
     align-items: center;
     flex-wrap: wrap;
@@ -1150,7 +1160,7 @@
     justify-content: space-around;
     display: flex;
     padding: 20px;
-    width: -webkit-fill-available;
+    width: 100%;
     margin-left: 100px;
     margin-right: 100px;
     margin-bottom: 5%;
@@ -1172,6 +1182,7 @@
     position: relative;
     width: 400px;
     margin-bottom: 100px;
+    margin-top: 100px;
   }
   .to-do-list li {
     width: 200px;
@@ -1184,21 +1195,17 @@
     align-items: center;
     justify-content: center;
     margin: auto;
-    margin-top: 50px;
     position: relative;
-    right: 15%;
-  }
-  #chartCanvas {
-    height: 300px;
   }
   .card-list p {
     display: flex;
     position: absolute;
     line-height: initial;
-    font-size: 18px;
+    font-size: 12px;
     justify-content: center;
     align-items: center;
     margin: auto;
+    margin-left: 20px;
     left: 0;
     right: 0;
     top: 20px;
@@ -1207,8 +1214,10 @@
   .buttons {
     display: flex;
     justify-content: space-around;
-    width: 400px;
+    width: 80%;
     margin: 10px;
+    flex-direction: column;
+    align-items: stretch;
   }
   .button2 {
     display: inline-block;
@@ -1217,6 +1226,7 @@
     overflow: hidden;
     z-index: 1;
     color: #090909;
+    margin-top: 20px;
     padding: 0.7em 1.7em;
     font-size: 18px;
     border-radius: 0.5em;
@@ -1289,6 +1299,7 @@
   .top-container {
     display: flex;
     height: -webkit-fill-available;
+    width: -webkit-fill-available;
     margin-bottom: 5%;
     margin-top: 15%;
     justify-content: space-evenly;
@@ -1306,12 +1317,12 @@
   .title-top-2 {
     margin-bottom: 50%;
   }
-  .first .fundo {
+  .first .fundo img {
     animation: cloudsAnimation 30s linear infinite;
     position: absolute;
     left: 0;
-    height: auto;
-    background: transparent;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
     z-index: 0;
   }
   @keyframes cloudsAnimation {
@@ -1416,7 +1427,7 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    height: 25em;
+    height: 315px;
     margin: 10px auto;
     border-radius: 10px;
     border-style: solid;
@@ -1435,11 +1446,11 @@
     box-shadow: 0px 155px 62px rgba(0, 0, 0, 0.01), 0px 87px 52px rgba(0, 0, 0, 0.05), 0px 39px 39px rgba(0, 0, 0, 0.09), 0px 10px 21px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
     transition: 0.4s ease-in-out;
     z-index: 1;
-    justify-content: space-between;
+    justify-content: center;
     border-radius: 10px;
   }
   .overlay-content {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     padding: 0.5rem 0 0 0.5rem;
@@ -1841,6 +1852,7 @@
     text-align: center;
     transition: all 400ms ease 0s;
     margin: 40px;
+    width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
