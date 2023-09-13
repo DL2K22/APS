@@ -9,10 +9,10 @@ const ctx = graficoCanvas.getContext('2d');
 
 function add() {
   const numeros = {
-    'USO DE ENERGIA': parseFloat(document.getElementById('numero1').value),
-    'USO DE ÁGUA': parseFloat(document.getElementById('numero2').value),
-    'USO DE RECICLAGEM': parseFloat(document.getElementById('numero3').value),
-    'USO DE TRANSPORTE': parseFloat(document.getElementById('numero4').value),
+    'ECON. ENERGIA': parseFloat(document.getElementById('numero1').value),
+    'ECON. ÁGUA': parseFloat(document.getElementById('numero2').value),
+    'RECICLAGEM': parseFloat(document.getElementById('numero3').value),
+    'TRANSP. SUSTENTÁVEL': parseFloat(document.getElementById('numero4').value),
   };
   localStorage.setItem('numeros', JSON.stringify(numeros));
   exibirNumerosSalvos();
@@ -100,20 +100,21 @@ function exibirGrafico() {
       ctx.lineTo(graficoCanvas.width / 2, graficoCanvas.height / 2);
       ctx.fill();
 
-      // Calcular a posição para mostrar o maior número dentro do pedaço
-      const textX = Math.cos(middleAngle) * (graficoCanvas.height / 4 - width) + graficoCanvas.width / 2;
-      const textY = Math.sin(middleAngle) * (graficoCanvas.height / 4 - height) + graficoCanvas.height / 2;
+      if (i === maxIndex) { // Verifique se é o índice do maior número
+        const textX = Math.cos(middleAngle) * (graficoCanvas.height / 4 - width) + graficoCanvas.width / 2;
+        const textY = Math.sin(middleAngle) * (graficoCanvas.height / 4 - height) + graficoCanvas.height / 2;
 
-      let label = nomesNumeros[i];
-      if (numerosArray.every(num => num === numerosArray[0])) {
-        label = 'Iguais';
+        let label = nomesNumeros[i];
+        if (numerosArray.every(num => num === numerosArray[0])) {
+          label = 'IGUAIS';
+        }
+        ctx.fillStyle = '#000';
+        ctx.font = 'bold 8px Arial';
+        ctx.textAlign = 'center';
+        ctx.textTransform = 'uppercase';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(label.toUpperCase(), textX, textY);
       }
-      ctx.fillStyle = '#000';
-      ctx.font = 'bold 10px Arial';
-      ctx.textAlign = 'center';
-      ctx.textTransform = 'uppercase';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(label.toUpperCase(), textX, textY);
 
       startAngle = endAngle;
     }
