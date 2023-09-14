@@ -151,12 +151,15 @@
   .title-textPrinc{
     margin: 50px;
     margin-top: 10%;
+    margin-bottom: 10%;
     color: rgb(53, 53, 53);
-    font-size: 40px;
-    font-style: italic;
     font-variant: petite-caps;
     letter-spacing: 2px;
     text-transform: uppercase;
+    h1{
+      font-size: 80px;
+      font-style: italic;
+    }
   }
 
 
